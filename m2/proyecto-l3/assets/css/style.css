@@ -1,0 +1,105 @@
+/* RESET DE ESTILOS */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ESTILOS HEADER */
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* ESTILOS NAV */
+
+nav {
+    background-color: grey;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 1.5rem;
+}
+
+nav li a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ESTILOS MAIN */
+
+main {
+    width: 85%;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+main section {
+    margin-bottom: 2rem;
+}
+
+main section h2 {
+    margin-bottom: 1rem;
+}
+
+/* SECCIÓN SOBRE MÍ */
+
+/* SECCIÓN PROYECTOS */
+
+article figure {
+    border: 3px silver solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    max-width: 220px;
+    margin-bottom: 1rem;
+}
+
+article figure img {
+    max-width: 220px;
+    max-height: 150px;
+}
+
+article figure figcaption {
+    background-color: #222222;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 600;
+    padding: 5px;
+    text-align: center;
+}
+
+article p{
+    margin-bottom: 1rem;
+}
+
+
+/* ESTILOS BOTÓN ENLACE */
+
+.boton-enlace {
+    border: 1px solid black;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #222222;
+    color: white;
+}
+
+.boton-enlace:hover {
+    opacity: 0.7;
+}
