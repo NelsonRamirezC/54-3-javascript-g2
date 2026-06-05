@@ -18,6 +18,9 @@
     <!-- CSS PROPIO -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <!-- JS PROPIO -->
+    <script defer src="./assets/js/sendmoney.js"></script>
+
 </head>
 
 <body>
@@ -52,7 +55,7 @@
         <section>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6">
-                    <h2>Balance cuenta: $ <span>60.000</span> </h2>
+                    <h2>Balance cuenta: $ <span id="balance">0</span> </h2>
                     <form>
                         <div class="mb-3">
                             <label for="contacto" class="form-label">Buscar en la agenda de transferencias:</label>
@@ -64,20 +67,20 @@
 
                         <div class="mb-3">
                             <h2>Contactos</h2>
-                            <ul id="contactList" class="list-group">
+                            <ul class="list-group" id="listaContactos">
                                 <li class="list-group-item">
-                                    <div class="contact-info">
-                                        <span class="contact-name">John Doe</span>
-                                        <span class="contact-details">CBU: 123456789, Alias: john.doe, Banco: ABC
-                                            Bank</span>
-                                    </div>
+                                    <input class="form-check-input me-1" type="radio" name="contacto" value=""
+                                        id="contacto1">
+                                    <label class="form-check-label" for="contacto1">
+                                        John Doe, CBU: 123456789, Alias: john.doe, Banco: ABC Bank
+                                    </label>
                                 </li>
                                 <li class="list-group-item">
-                                    <div class="contact-info">
-                                        <span class="contact-name">Jane Smith</span>
-                                        <span class="contact-details">CBU: 987654321, Alias: jane.smith, Banco: XYZ
-                                            Bank</span>
-                                    </div>
+                                    <input class="form-check-input me-1" type="radio" name="contacto" value=""
+                                        id="contacto2">
+                                    <label class="form-check-label" for="contacto2">
+                                        Jane Smith, CBU: 987654321, Alias: jane.smith, Banco: XYZ Bank
+                                    </label>
                                 </li>
                             </ul>
                         </div>

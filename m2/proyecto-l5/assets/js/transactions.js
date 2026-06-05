@@ -52,6 +52,3 @@ for (const transaccion of transacciones) {
     listaTransaccionesEl.appendChild(liElement);
 };
 
-
-
-
