@@ -1,0 +1,16 @@
+<script>
+    //CALCULADORA DE IMC
+    //INVESTIGAR LA FORMULA PARA CALCULAR EL IMC
+    //PEDIR AL USUARIO EL INGRESO DE DATOS MEDIANTE PROMPT
+    //MOSTRAR EL RESULTADO EN UN ALERT
+
+    let peso = parseFloat(prompt("Ingrese su peso en kg:"));
+    let altura = parseFloat(prompt("Ingrese su altura en metros(ej: 1.70):"));
+
+    //Calcular el IMC
+    let imc = peso / (altura * altura);
+
+    //Mostrar el resultado
+    alert("Tu IMC es: " + imc.toFixed(2));
+
+</script>
