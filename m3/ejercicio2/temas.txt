@@ -1,0 +1,6 @@
+- operadores aritméticos
+- operadores lógicos
+- condicionales
+- switch
+- if ternario
+
