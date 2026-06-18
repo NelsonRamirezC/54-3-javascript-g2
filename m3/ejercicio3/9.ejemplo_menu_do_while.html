@@ -1,0 +1,36 @@
+<script>
+
+    let opcion;
+
+    do {
+        // El menú se ejecuta primero sin importar qué
+        opcion = prompt(
+            "--- MENÚ MEJORADO (do while) ---\n" +
+            "1. Saludar\n" +
+            "2. Ver hora actual\n" +
+            "3. Salir\n\n" +
+            "Elige una opción:"
+        );
+
+        switch (opcion) {
+            case "1":
+                alert("¡Hola! Estás usando un bucle do-while. 🚀");
+                break;
+            case "2":
+                let horaActual = new Date().toLocaleTimeString();
+                alert("La hora actual es: " + horaActual);
+                break;
+            case "3":
+                alert("¡Hasta luego! Programa finalizado.");
+                break;
+            case null:
+                alert("Saliendo del menú...");
+                break;
+            default:
+                alert("Opción no válida. Intenta de nuevo.");
+                break;
+        }
+
+        // El bucle se repite MIENTRAS la opción NO sea "3" Y tampoco sea null (cancelar)
+    } while (opcion !== "3" && opcion !== null);
+</script>

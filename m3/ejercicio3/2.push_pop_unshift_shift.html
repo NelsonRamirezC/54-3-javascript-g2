@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>push - pop - unshift - shift</title>
+</head>
+<body>
+
+    <button id="btnPush">Agregar a final</button>
+    <button id="btnPop">Eliminar el último</button>
+    <button id="btnUnshift">Agregar al principio</button>
+    <button id="btnShift">Eliminar el primero</button>
+
+
+    <script>
+        const frutas = ["Manzana"];
+        console.log("Arreglo inicial:", frutas);
+        
+        //EVENTO AGREGAR AL FINAL -> .push();
+        btnPush.addEventListener("click", function(){
+            console.log("Agregando elemento.");
+            let nuevoElemento = prompt("Introduce una nueva fruta...");
+            frutas.push(nuevoElemento);
+            console.log("Array frutas actualizado: ", frutas);
+        });
+
+
+        //EVENTO ELIMINAR EL ÚLTIMO ELEMENTO -> .pop();
+        btnPop.addEventListener("click", function(){
+
+            if(frutas.length == 0){
+                //RETURN DEVUELVE UNA RESPUESTA EVITANDO QUE SE EJECUTE EL RESTO DEL CÓDIGO
+                return alert("No existen elementos dentro del arreglo...");
+            }
+
+            console.log("Eliminando el último elemento...");
+
+            let ultimoElemento = frutas[frutas.length-1];
+
+            let mensaje = `Desea eliminar el último elemento (${ultimoElemento})?`;
+
+            let confirmacion = confirm(mensaje);
+
+            //SI CONFIRMA LA ELIMINACIÓN
+            if(confirmacion){
+                
+                let elementoEliminado = frutas.pop();
+                alert("Se ha eliminado el último elemento: " + elementoEliminado);
+                console.log("Array frutas actualizado: ", frutas);
+            }
+        });
+
+
+        //EVENTO AGREGAR AL PRINCIPIO -> .unshift();
+        btnUnshift.addEventListener("click", function(){
+            console.log("Agregando elemento al principio.");
+            let nuevoElemento = prompt("Introduce una nueva fruta...");
+            frutas.unshift(nuevoElemento);
+            console.log("Array frutas actualizado: ", frutas);
+        });
+
+
+        //EVENTO ELIMINAR EL ÚLTIMO ELEMENTO -> .shift();
+        btnShift.addEventListener("click", function(){
+
+            if(frutas.length == 0){
+                //RETURN DEVUELVE UNA RESPUESTA EVITANDO QUE SE EJECUTE EL RESTO DEL CÓDIGO
+                return alert("No existen elementos dentro del arreglo...");
+            }
+
+            console.log("Eliminando el primer elemento...");
+
+            let primerElemento = frutas[0];
+
+            let mensaje = `Desea eliminar el primer elemento (${primerElemento})?`;
+
+            let confirmacion = confirm(mensaje);
+
+            //SI CONFIRMA LA ELIMINACIÓN
+            if(confirmacion){
+                
+                let elementoEliminado = frutas.shift();
+                alert("Se ha eliminado el primer elemento: " + elementoEliminado);
+                console.log("Array frutas actualizado: ", frutas);
+            }
+        });
+
+
+    </script>
+    
+</body>
+</html>

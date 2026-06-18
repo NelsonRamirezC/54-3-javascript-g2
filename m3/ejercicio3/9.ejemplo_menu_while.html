@@ -1,0 +1,38 @@
+<script>
+    // Variable para controlar la ejecución del bucle
+let opcion = "";
+
+while (opcion !== "3") { //SE REPITE MIENTRAS CONCIDIÓN SEA VERDADERA
+    // Mostramos el menú y capturamos la respuesta del usuario
+    opcion = prompt(
+        "--- MENÚ PRINCIPAL ---\n" +
+        "1. Saludar\n" +
+        "2. Ver hora actual\n" +
+        "3. Salir\n\n" +
+        "Por favor, elige una opción (1-3):"
+    );
+
+    // Evaluamos la opción ingresada
+    switch (opcion) {
+        case "1":
+            alert("¡Hola! Esperamos que tengas un excelente día. 😊");
+            break;
+        case "2":
+            let horaActual = new Date().toLocaleTimeString();
+            alert("La hora actual es: " + horaActual);
+            break;
+        case "3":
+            alert("¡Hasta luego! Gracias por usar el programa.");
+            break;
+        case null: 
+            // Esto maneja el caso si el usuario presiona "Cancelar" en el prompt
+            alert("Operación cancelada. Saliendo del menú...");
+            opcion = "3"; // Forzamos la salida del bucle
+            break;
+        default:
+            // Si ingresa cualquier otra cosa que no sea 1, 2 o 3
+            alert("Opción no válida. Por favor, intenta de nuevo.");
+            break;
+    }
+}
+</script>
