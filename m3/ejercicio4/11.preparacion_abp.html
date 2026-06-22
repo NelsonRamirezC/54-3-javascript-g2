@@ -1,0 +1,59 @@
+<script>
+
+    function sumar() {
+        let valor1 = prompt("Ingresa el primer valor a sumar:");
+        let valor2 = prompt("Ingresa el segundo valor a sumar:");
+        return Number(valor1) + Number(valor2);
+    }
+
+    function restar() {
+        let valor1 = prompt("Ingresa el primer valor a restar:");
+        let valor2 = prompt("Ingresa el segundo valor a restar:");
+        return Number(valor1) - Number(valor2);
+    }
+
+    function menu() {
+
+        let continuar = true;
+
+        while (continuar) {
+
+            let mensaje = "Menú de opciones:\n" +
+                "1. Sumar valores.\n" +
+                "2. Restar valores.\n"+
+                "3. Salir.\n"
+
+            let opcion = prompt(mensaje);
+
+            switch (opcion) {
+                case "1":
+                    let resultadoSuma = sumar();
+                    alert("El resultado de la suma es: " + resultadoSuma);
+
+                    break;
+                case "2":
+                    let resultadoResta = restar();
+                    alert("El resultado de la resta es: " + resultadoResta);
+                    break;
+
+                case "3":
+                    alert("Dejando el menú...");
+                    continuar = false;
+                    break;
+
+                default:
+                    alert("Opción inválida, vuelva a intentar.");
+                    break;
+            }
+
+        }
+    }
+
+
+    function main() {
+        menu();
+    }
+
+    main();
+
+</script>
