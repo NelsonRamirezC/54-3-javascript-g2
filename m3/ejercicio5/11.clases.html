@@ -1,0 +1,45 @@
+<script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+
+<script>
+
+    //DEFINIR IDIOMA PARA MOMENT
+    moment.locale("es");
+
+    class Mascota {
+        constructor(nombre, tipo, raza, medida, fechaNacimiento, vacunas) {
+            this.nombre = nombre;
+            this.tipo = tipo;
+            this.raza = raza;
+            this.medida = medida;
+            this.fechaNacimiento = fechaNacimiento;
+            this.vacunas = vacunas;
+        };
+
+        vacunasStr() {
+            return this.vacunas ? "Vacunado" : "No vacunado";
+        };
+
+        edad() {
+            const fechaNacimiento = moment(this.fechaNacimiento, "DD/MM/YYYY");
+            // 2. Calcular la diferencia en años respecto a la fecha actual
+            const edad = moment().diff(fechaNacimiento, 'years');
+
+            return edad;
+        };
+    };
+
+    const m1 = new Mascota("Pepito", "Perro", "Sin raza", "Pequeño", "01/01/2020", false);
+    const m2 = new Mascota("Cucho", "Gato", "Sin raza", "Pequeño", "05/07/2022", true);
+
+    const mascotas = [m1, m2];
+
+    for (const mascota of mascotas) {
+        console.log("Mascota:")
+        console.log("Nombre mascota:", m1.nombre);
+        console.log("Vacunas:", m1.vacunasStr());
+        console.log("Edad:", m1.edad());
+        console.log("*".repeat(50));
+    };
+
+
+</script>

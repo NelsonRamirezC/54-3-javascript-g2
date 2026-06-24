@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wallet - Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="formLogin">
+            <div class="form-group">
+                <label for="emailLogin">Email:</label>
+                <input type="email" class="form-control" id="emailLogin" placeholder="Enter email" name="email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="passwordLogin">Password:</label>
+                <input type="password" class="form-control" id="passwordLogin" placeholder="Enter password"
+                    name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a href="menu.html" class="btn btn-secondary">Ir al Menú Principal</a>
+    </div>
+
+    <script>
+
+        class Usuario {
+            constructor(nombre, apellido, email, password, banco, numeroCuenta, monto = 0) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.email = email;
+                this.password = password;
+                this.banco = banco;
+                this.numeroCuenta = numeroCuenta;
+                this.monto = monto;
+            };
+
+            nombreCompleto() {
+                return `${this.nombre} ${this.apellido}`;
+            }
+        };
+
+        //USUARIOS
+        const usuario1 = new Usuario("Pedro", "Villa", "pedro.villa@gmail.com", "123456", "Banco Estado", "123456789", 5_000);
+
+        const usuario2 = new Usuario("Manuel", "Jorquera", "manuel.jorquera@gmail.com", "123456", "Banco Estado", "987654321", 10_000);
+
+        const usuarios = [usuario1, usuario2];
+
+
+
+        //CAPTURAR Y CREAR EVENTO SUBMIT AL FORMULARIO
+
+        const formLogin = document.getElementById("formLogin");
+
+        formLogin.addEventListener("submit", (event) => {
+            //PODEMOS PREVENIR LAS ACCIONES POR DEFECTO USANDO .preventDefault();
+            event.preventDefault();
+
+            //1. OBTENEMOS LOS VALORES DESDE LOS INPUTS
+            let email = emailLogin.value;
+            let password = passwordLogin.value;
+
+            //2. VALIDAR ENTRADA DE DATOS
+
+            if (!email || !password) {
+                return alert("Debe introducir los datos solicitados.");
+            };
+
+            //3. CONSULTAR SI CREDENCIALES SON VÁLIDAS
+            const foundUsuario = usuarios.find(u => u.email === email && u.password === password);
+
+            //4. VALIDAMOS SI COINCIDEN LAS CREDENCIALES
+
+            if (!foundUsuario) {
+                return alert("Email y/o Password incorrectos.");
+            }
+
+            //5. PROCESAMOS EL LOGIN ->REDIRECCIONAMIENTO, MENSAJE DE BIENVENIDA
+
+            let mensaje = `Login exitoso, gracias ${foundUsuario.nombreCompleto()} por visitarnos.`;
+            alert(mensaje);
+
+            //6. REDIRECCIONAMOS AL USUARIO A OTRA PÁGINA (PÁGINA PRINCIPAL)
+            formLogin.reset();
+            location.href = "/12.menu.html";
+        });
+
+
+
+    </script>
+</body>
+
+</html>
